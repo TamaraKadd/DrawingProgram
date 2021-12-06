@@ -1,0 +1,3 @@
+void textQuitButton() {}
+
+void text() {}
