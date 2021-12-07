@@ -1,31 +1,41 @@
 //Global Variable
-float drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight;
+float drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight, drawingDiameter;
+Boolean draw=false;
 
 
 
 
 
 void setup() {
-fullScreen();
+  fullScreen();
 
 
+population();
 
+ 
 
-  drawingSurfaceX = displayWidth*0;
-  drawingSurfaceY = displayHeight*0;
-  drawingSurfaceWidth = displayWidth;
-  drawingSurfaceHeight = displayHeight;
-  //
-rect(drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
-
-
-
+    //
+    rect(drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
 }
 
 void draw() {
+
+  if (draw == true) 
+  {
+    ellipse(mouseX, mouseY, drawingDiameter, drawingDiameter);
+  }
 }
 
 void mousePressed() {
+
+  if ( mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
+
+    if (draw == false) {
+      draw = true;
+    } else {
+      draw = false;
+    }
+  }
 }
 
 void keyPressed() {
