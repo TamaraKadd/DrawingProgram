@@ -11,23 +11,23 @@ void setup() {
 
 
 population();
-
- 
+ quitButtonSetup();
+  textSetup();
 
     //
     rect(drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
 }
 
 void draw() {
-
-  if (draw == true) 
+ quitButtonDraw();
+  if (draw == true &&  mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight) 
   {
-    ellipse(mouseX, mouseY, drawingDiameter, drawingDiameter);
+    line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
 
 void mousePressed() {
-
+quitButtonMousePressed();
   if ( mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
 
     if (draw == false) {
