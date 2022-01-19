@@ -10,7 +10,7 @@ void quitButtonSetup()
 {
   quitButtonX = width*19/20;
   quitButtonY = height*0;
-  quitButtonWidth = width*2/20;
+  quitButtonWidth = width*1/20;
   quitButtonHeight = height*1/20;
 }//End quitButtonSetup()
 
